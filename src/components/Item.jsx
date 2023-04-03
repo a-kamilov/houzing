@@ -3,8 +3,29 @@ import bed from "./img/bed.png";
 import bath from "./img/bath.png";
 import garage from "./img/car.png";
 import sqFt from "./img/ruler.png";
+import { useEffect } from "react";
+import $ from 'jquery'
 
 const Item = (props) => {
+
+  useEffect(() => {
+    let hr = true;
+    $(".fa-heart").click(function () {
+      if (hr) {
+        $(".fa-heart").css({"color" : "red"});
+        hr = false;
+        
+      }
+      else{
+        $(".fa-heart").css({"color" : "#676767"});
+        hr = true;
+      }
+
+    });
+  },[])
+
+
+
   return (
     <div className="item">
       <button>FEATURED</button>
@@ -35,7 +56,8 @@ const Item = (props) => {
       <h3>{props.price}</h3>
       <div className="icons">
         <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-        <i class="far fa-heart"></i>
+        <i class="fa-solid fa-heart"></i>
+        {/* <i class="far fa-heart"></i> */}
       </div>
     </div>
   );
