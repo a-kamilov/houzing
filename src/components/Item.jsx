@@ -12,12 +12,11 @@ const Item = (props) => {
     let hr = true;
     $(".fa-heart").click(function () {
       if (hr) {
-        $(".fa-heart").css({"color" : "red"});
+        $(this).css({"color" : "red"});
         hr = false;
-        
       }
       else{
-        $(".fa-heart").css({"color" : "#676767"});
+        $(this).css({"color" : "#676767"});
         hr = true;
       }
 
@@ -57,7 +56,6 @@ const Item = (props) => {
       <div className="icons">
         <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
         <i class="fa-solid fa-heart"></i>
-        {/* <i class="far fa-heart"></i> */}
       </div>
     </div>
   );
